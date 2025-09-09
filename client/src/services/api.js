@@ -2,7 +2,7 @@ import axios from 'axios';
 
 // Create axios instance
 const api = axios.create({
-  baseURL: 'http://localhost:4000/api',
+  baseURL: process.env.REACT_APP_API_URL || 'https://task-management-lake-sigma.vercel.app/api',
   timeout: 10000,
   headers: {
     'Content-Type': 'application/json'

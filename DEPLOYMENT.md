@@ -64,7 +64,7 @@ This guide will help you deploy the Task Management App to production using Verc
 
 3. **Add Environment Variables**
    ```
-   MONGODB_URI=mongodb+srv://username:password@cluster.mongodb.net/taskmanagement
+
    JWT_SECRET=your_super_secret_jwt_key_here_make_it_long_and_secure
    JWT_EXPIRE=7d
    NODE_ENV=production
@@ -109,7 +109,6 @@ This guide will help you deploy the Task Management App to production using Verc
 ### Backend (.env)
 ```env
 # Database
-MONGODB_URI=mongodb+srv://username:password@cluster.mongodb.net/taskmanagement
 
 # JWT
 JWT_SECRET=your_super_secret_jwt_key_here_make_it_long_and_secure

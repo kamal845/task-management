@@ -120,3 +120,5 @@ docker-compose.yml
 # Local development
 .env.development
 .env.production
+
+README.md
