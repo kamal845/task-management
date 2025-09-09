@@ -3,18 +3,15 @@ import { useQuery, useMutation, useQueryClient } from 'react-query';
 import { Link } from 'react-router-dom';
 import { 
   Search, 
-  Filter, 
   Plus, 
   Edit, 
   Trash2, 
   CheckSquare, 
   Clock,
-  AlertTriangle,
-  MoreVertical,
   Calendar
 } from 'lucide-react';
 import { taskAPI } from '../../services/api';
-import { Card, CardContent, CardHeader, CardTitle } from '../../components/UI/Card';
+import { Card, CardContent } from '../../components/UI/Card';
 import { StatusBadge, PriorityBadge } from '../../components/UI/Badge';
 import Button from '../../components/UI/Button';
 import Input from '../../components/UI/Input';
@@ -104,14 +101,14 @@ const Tasks = () => {
     setCurrentPage(1);
   };
 
-  const handleSort = (field) => {
-    if (sortBy === field) {
-      setSortOrder(sortOrder === 'asc' ? 'desc' : 'asc');
-    } else {
-      setSortBy(field);
-      setSortOrder('asc');
-    }
-  };
+  // const handleSort = (field) => {
+  //   if (sortBy === field) {
+  //     setSortOrder(sortOrder === 'asc' ? 'desc' : 'asc');
+  //   } else {
+  //     setSortBy(field);
+  //     setSortOrder('asc');
+  //   }
+  // };
 
   if (isLoading) {
     return (

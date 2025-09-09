@@ -13,7 +13,7 @@ import { taskAPI } from '../../services/api';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '../../components/UI/Card';
 import { StatusBadge, PriorityBadge } from '../../components/UI/Badge';
 import LoadingSpinner from '../../components/UI/LoadingSpinner';
-import { formatDate, getRelativeTime, getDueDateStatusColor } from '../../utils/dateUtils';
+import { formatDate, getRelativeTime } from '../../utils/dateUtils';
 import { Link } from 'react-router-dom';
 
 const Dashboard = () => {

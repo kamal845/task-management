@@ -1,4 +1,4 @@
-import { format, formatDistanceToNow, isAfter, isBefore, isToday, isTomorrow, isYesterday, parseISO } from 'date-fns';
+import { format, formatDistanceToNow, isBefore, isToday, isTomorrow, isYesterday, parseISO } from 'date-fns';
 
 // Format date for display
 export const formatDate = (date, formatString = 'MMM dd, yyyy') => {

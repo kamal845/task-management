@@ -8,7 +8,6 @@ import {
   LogOut, 
   Menu, 
   X,
-  BarChart3,
   Search,
   Bell
 } from 'lucide-react';

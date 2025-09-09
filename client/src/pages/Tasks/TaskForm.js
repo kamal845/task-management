@@ -9,7 +9,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '../..
 import Button from '../../components/UI/Button';
 import Input from '../../components/UI/Input';
 import LoadingSpinner from '../../components/UI/LoadingSpinner';
-import { formatDateForInput } from '../../utils/dateUtils';
+// import { formatDateForInput } from '../../utils/dateUtils';
 import { isValidTaskTitle, isValidTaskDescription } from '../../utils/validation';
 import toast from 'react-hot-toast';
 import 'react-datepicker/dist/react-datepicker.css';
@@ -27,8 +27,8 @@ const TaskForm = () => {
     register,
     handleSubmit,
     formState: { errors },
-    setValue,
-    watch,
+    // setValue,
+    // watch,
     reset,
     control,
   } = useForm({
