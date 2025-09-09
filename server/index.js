@@ -34,6 +34,8 @@ app.use(limiter);
 
 // CORS configuration
 const allowedOrigins = [
+  'https://client-96ltnatn4-kamal-kumars-projects-ce2d2ac9.vercel.app', 
+  'https://client-mnals6fr5-kamal-kumars-projects-ce2d2ac9.vercel.app',
   'https://client-one-puce.vercel.app',
   'https://client-l32xxcx9w-kamal-kumars-projects-ce2d2ac9.vercel.app',
   'http://localhost:3000',
