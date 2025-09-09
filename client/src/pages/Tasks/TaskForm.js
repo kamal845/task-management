@@ -42,7 +42,7 @@ const TaskForm = () => {
   });
 
   // Fetch task for editing
-  const { data: _taskData, isLoading: taskLoading } = useQuery(
+  const { isLoading: taskLoading } = useQuery(
     ['task', id],
     () => taskAPI.getTask(id),
     {
