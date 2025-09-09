@@ -39,7 +39,8 @@ const allowedOrigins = [
   'https://client-one-puce.vercel.app',
   'https://client-l32xxcx9w-kamal-kumars-projects-ce2d2ac9.vercel.app',
   'http://localhost:3000',
-  'http://localhost:3001'
+  'http://localhost:3001',
+  'https://client-mnals6fr5-kamal-kumars-projects-ce2d2ac9.vercel.app',
 ];
 
 app.use(cors({
