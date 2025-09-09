@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { Eye, EyeOff } from 'lucide-react';
+// import { Eye, EyeOff } from 'lucide-react';
 import { useAuth } from '../../contexts/AuthContext';
 import Button from '../../components/UI/Button';
 import Input from '../../components/UI/Input';
@@ -8,8 +8,8 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '../..
 import { isValidEmail, isValidName, isValidPassword, getPasswordStrength } from '../../utils/validation';
 
 const Register = () => {
-  const [showPassword, setShowPassword] = useState(false);
-  const [showConfirmPassword, setShowConfirmPassword] = useState(false);
+  // const [showPassword, setShowPassword] = useState(false);
+  // const [showConfirmPassword, setShowConfirmPassword] = useState(false);
   const [password, setPassword] = useState('');
   const [formData, setFormData] = useState({
     name: '',
@@ -168,7 +168,7 @@ const Register = () => {
               <div>
                 <Input
                   label="Password"
-                  type={showPassword ? 'text' : 'password'}
+                  type="password"
                   name="password"
                   placeholder="Create a password"
                   value={formData.password}
@@ -205,7 +205,7 @@ const Register = () => {
               <div>
                 <Input
                   label="Confirm password"
-                  type={showConfirmPassword ? 'text' : 'password'}
+                  type="password"
                   name="confirmPassword"
                   placeholder="Confirm your password"
                   value={formData.confirmPassword}
