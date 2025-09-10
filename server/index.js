@@ -46,22 +46,9 @@ const allowedOrigins = [
   'http://localhost:3001',
   process.env.CLIENT_URL // Dynamic client URL from env
 ].filter(Boolean); // Remove undefined values
-
+// Temporary simple CORS - guaranteed to work
 app.use(cors({
-  origin: function (origin, callback) {
-    // Allow requests with no origin (like mobile apps or curl requests)
-    if (!origin) return callback(null, true);
-    
-    console.log('Request origin:', origin); // Debug log
-    console.log('Allowed origins:', allowedOrigins); // Debug log
-    
-    if (allowedOrigins.indexOf(origin) !== -1) {
-      callback(null, true);
-    } else {
-      console.log('CORS blocked origin:', origin);
-      callback(new Error('Not allowed by CORS'));
-    }
-  },
+  origin: true, // Allow all origins temporarily
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With'],
   credentials: true,
