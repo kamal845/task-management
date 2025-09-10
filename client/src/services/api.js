@@ -1,9 +1,18 @@
 import axios from 'axios';
 
 // Create axios instance
-// Create axios instance
+// Normalize base URL to always include /api to avoid CORS/path mismatches
+const rawBaseUrl = process.env.REACT_APP_API_URL || 'https://task-management-lake-sigma.vercel.app/api';
+const ensureApiSuffix = (url) => {
+  if (!url) return '/api';
+  // remove trailing slash
+  const trimmed = url.replace(/\/$/, '');
+  return trimmed.endsWith('/api') ? trimmed : `${trimmed}/api`;
+};
+const apiBaseURL = ensureApiSuffix(rawBaseUrl);
+
 const api = axios.create({
-  baseURL: process.env.REACT_APP_API_URL || 'https://task-management-lake-sigma.vercel.app/api',
+  baseURL: apiBaseURL,
   timeout: 10000,
   headers: {
     'Content-Type': 'application/json'
