@@ -34,15 +34,20 @@ app.use(limiter);
 
 // CORS configuration
 const allowedOrigins = [
-  'https://client-96ltnatn4-kamal-kumars-projects-ce2d2ac9.vercel.app', 
+  'https://client-96ltnatn4-kamal-kumars-projects-ce2d2ac9.vercel.app',
   'https://client-mnals6fr5-kamal-kumars-projects-ce2d2ac9.vercel.app',
   'https://client-one-puce.vercel.app',
   'https://client-l32xxcx9w-kamal-kumars-projects-ce2d2ac9.vercel.app',
+  'https://task-management-lake-sigma.vercel.app',
+  'https://task-management-rxts.vercel.app',
+  'https://server-60xkjim8k-kamal-kumars-projects-ce2d2ac9.vercel.app',
   'http://localhost:3000',
   'http://localhost:3001',
-  'https://client-mnals6fr5-kamal-kumars-projects-ce2d2ac9.vercel.app',
-];
-
+  process.env.CLIENT_URL // Dynamic client URL from env
+].filter(Boolean); // Remove undefined values
+console.log('CORS blocked origin:', origin);
+console.log('Allowed origins:', allowedOrigins);
+callback(new Error('Not allowed by CORS'));
 app.use(cors({
   origin: function (origin, callback) {
     // Allow requests with no origin (like mobile apps or curl requests)
@@ -51,6 +56,7 @@ app.use(cors({
     if (allowedOrigins.indexOf(origin) !== -1) {
       callback(null, true);
     } else {
+      console.log('CORS blocked origin:', origin);
       callback(new Error('Not allowed by CORS'));
     }
   },
