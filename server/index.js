@@ -33,6 +33,7 @@ const limiter = rateLimit({
 app.use(limiter);
 
 // CORS configuration
+// CORS configuration
 const allowedOrigins = [
   'https://client-96ltnatn4-kamal-kumars-projects-ce2d2ac9.vercel.app',
   'https://client-mnals6fr5-kamal-kumars-projects-ce2d2ac9.vercel.app',
@@ -45,13 +46,14 @@ const allowedOrigins = [
   'http://localhost:3001',
   process.env.CLIENT_URL // Dynamic client URL from env
 ].filter(Boolean); // Remove undefined values
-console.log('CORS blocked origin:', origin);
-console.log('Allowed origins:', allowedOrigins);
-callback(new Error('Not allowed by CORS'));
+
 app.use(cors({
   origin: function (origin, callback) {
     // Allow requests with no origin (like mobile apps or curl requests)
     if (!origin) return callback(null, true);
+    
+    console.log('Request origin:', origin); // Debug log
+    console.log('Allowed origins:', allowedOrigins); // Debug log
     
     if (allowedOrigins.indexOf(origin) !== -1) {
       callback(null, true);
